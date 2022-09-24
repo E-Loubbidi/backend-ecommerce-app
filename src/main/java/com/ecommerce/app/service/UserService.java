@@ -62,7 +62,7 @@ public class UserService {
 		return new ResponseEntity<ApiResponse>(new ApiResponse(true, "User created"), HttpStatus.CREATED);
 	}
 
-	private String hashPassword(String password) throws NoSuchAlgorithmException {
+	public String hashPassword(String password) throws NoSuchAlgorithmException {
 		MessageDigest messageDigest = MessageDigest.getInstance("MD5");
 		messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
 		byte[] digest = messageDigest.digest();
